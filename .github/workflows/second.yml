@@ -1,0 +1,30 @@
+name: second workflow
+on: [push, fork]
+
+jobs: 
+    build_job:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: build phase
+          run: echo "this is build phase"
+          
+    test_job:
+        needs: [build_job]
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: test phase
+          run: echo "this is test phase"
+
+    deploy_job:
+        needs: [test_job]
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: deploy phase
+          run: echo "this is deploy phase"
+
+        
+    
+    
