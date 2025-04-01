@@ -18,7 +18,7 @@ jobs:
           run: echo "this is test phase"
 
     deploy_job:
-        needs: [test_job]
+        needs: [test_job,build_job]
         runs-on: ubuntu-latest
 
         steps:
