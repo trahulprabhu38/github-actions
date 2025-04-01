@@ -15,8 +15,20 @@ jobs:
         ls -ltra
         cat README.md
         echo "this is my first github actions"
+        sudo apt-get install cowsay -y
+        
+
+    
     - name: generate ASCII Artwork
       run: cowsay -f dragon "run for cover,i am a dragon .... rawr ">>dragon.txt
+
+    - name: test file
+      run: grep -i "dragon" dragon.txt
+
+    - name: upload file
+      run: cat dragon.txt
+
+      
     # - name: list files
     #   run: ls
 
